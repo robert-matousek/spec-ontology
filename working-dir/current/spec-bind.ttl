@@ -32,11 +32,11 @@ spec-bind:Must rdf:type spec:Bindingness ;
     skos:prefLabel "must"@en,
 		"müssen"@de,
 		"moeten"@nl ;
-    skos:altLabel "required"@en,
+    skos:altLabel "is required"@en,
 		"shall"@en,
-		"erforderlich"@de,
-		"nötig"@de,
-		"vereist"@nl ;
+		"ist erforderlich"@de,
+		"ist nötig"@de,
+		"is vereist"@nl ;
     rdfs:comment "An absolute requirement of the specification."@en,
 		"Eine absolute Anforderung der Spezifikation."@de,
 		"Een absolute vereiste van de specificatie."@nl ;
@@ -58,9 +58,9 @@ spec-bind:Should rdf:type spec:Bindingness ;
     skos:prefLabel "should"@en,
 		"sollen"@de,
 		"zou moeten"@nl ;
-    skos:altLabel "recommended"@en,
-		"empfohlen"@de,
-		"aanbevolen"@nl ;
+    skos:altLabel "is recommended"@en,
+		"wird empfohlen"@de,
+		"wordt aanbevolen"@nl ;
     rdfs:comment "Valid reasons may exist in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course."@en,
 		"Unter bestimmten Umständen kann es gute Gründe geben diese Spezifikation zu ignorieren. Die Auswirkungen müssen voll und ganz verstanden und sorgfältig abgewägt werden bevor von der Spezifikation abgewichen wird."@de,
 		"Geven een sterke wens aan, tenzij er een valide reden is om in een specifiek geval af te wijken. De implicaties daarvan moeten zorgvuldig gewogen zijn voordat er afgeweken wordt."@nl ;
@@ -71,7 +71,7 @@ spec-bind:ShouldNot rdf:type spec:Bindingness ;
 		"soll nicht"@de,
 		"zou niet moeten"@nl ;
     skos:altLabel "not recommended"@en,
-		"nicht empfohlen"@de ;
+		"wird nicht empfohlen"@de ;
     rdfs:comment "Valid reasons may exist in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed."@en,
 		"In speziellen Situationen kann es gute Gründe geben kann, dass dieses Verhalten akzeptabel, ja sogar nützlich sein kann."@de,
 		"Geven een ongewenste omstandigheid, waarvan volledige implicaties daarvan zorgvuldig gewogen moeten zijn voordat het in een specifiek geval toegestaan is."@nl ;
@@ -81,14 +81,14 @@ spec-bind:May rdf:type spec:Bindingness ;
     skos:prefLabel "may"@en,
         "darf"@de,
         "kan"@nl ;
-    skos:altLabel "optional"@en,
-        "not required"@en,
+    skos:altLabel "is optional"@en,
+        "is not required"@en,
         "kann"@de,
-		"nicht nötig"@de,
-		"optional"@de,
+		"ist nicht nötig"@de,
+		"ist optional"@de,
 		"mogen"@nl,
-		"optioneel"@nl,
-		"niet vereist"@nl ;
+		"is optioneel"@nl,
+		"is niet vereist"@nl ;
     rdfs:comment "The item is truly optional."@en,
 		"Das Verhalten ist wirklich optional."@de,
 		"Dit onderdeel is daadwerkelijk optioneel."@nl ;
