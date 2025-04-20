@@ -1,21 +1,10 @@
 @prefix spec: <https://w3id.org/spec-ontology/spec/> .
-@prefix spec-cat: <https://w3id.org/spec-ontology/cat/> .
 @prefix spec-bind: <https://w3id.org/spec-ontology/bind/> .
-@prefix spec-doco: <https://w3id.org/spec-ontology/doco/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2008/05/skos#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix doco: <http://purl.org/spar/doco/> .
-@prefix po: <http://purl.org/spar/po> .
-@prefix nen2660: <https://w3id.org/nen2660/def#> .
-@prefix frbr: <http://purl.org/vocab/frbr/core#> .
-@prefix c4o: <http://purl.org/spar/c4o/>.
-
-#TODO: Uitwerken in volledige SKOS
 
 <https://w3id.org/spec-ontology/bind> rdf:type owl:Ontology ;
     owl:versionInfo "1.2"^^xsd:string ;
@@ -40,46 +29,67 @@
 	.
 
 spec-bind:Must rdf:type spec:Bindingness ;
-    rdfs:label "Must, Required, Shall"@en, 
-		"Muss, Erforderlich, Nötig"@de, 
-		"Moet, Vereist"@nl ;
-    rdfs:comment "An absolute requirement of the specification."@en, 
-		"Eine absolute Anforderung der Spezifikation."@de, 
+    skos:prefLabel "must"@en,
+		"müssen"@de,
+		"moeten"@nl ;
+    skos:altLabel "required"@en,
+		"shall"@en,
+		"erforderlich"@de,
+		"nötig"@de,
+		"vereist"@nl ;
+    rdfs:comment "An absolute requirement of the specification."@en,
+		"Eine absolute Anforderung der Spezifikation."@de,
 		"Een absolute vereiste van de specificatie."@nl ;
 	.
 
 spec-bind:MustNot rdf:type spec:Bindingness ;
-    rdfs:label "Must not, Shall not"@en, 
-		"Darf nicht, Verboten."@de, 
-		"Mag niet, Verboden"@nl ;
-    rdfs:comment "An absolute prohibition of the specification."@en, 
-		"Ein absolutes Verbot der Spezifikation."@de, 
+    skos:prefLabel "must not"@en,
+		"darf nicht"@de,
+		"mag niet"@nl ;
+    skos:altLabel "shall not"@en,
+		"ist verboten"@de,
+		"is verboden"@nl ;
+    rdfs:comment "An absolute prohibition of the specification."@en,
+		"Ein absolutes Verbot der Spezifikation."@de,
 		"Een absoluut verbod van de specificatie."@nl ;
 	.
-		
+	
 spec-bind:Should rdf:type spec:Bindingness ;
-    rdfs:label "Should, Recommended"@en,
-		"Soll, Empfohlen"@de,
-		"Zou moeten, Aanbevolen"@nl ;
-    rdfs:comment "Valid reasons may exist in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course."@en, 
-		"Unter bestimmten Umständen kann es gute Gründe geben diese Spezifikation zu ignorieren. Die Auswirkungen müssen voll und ganz verstanden und sorgfältig abgewägt werden bevor von der Spezifikation abgewichen wird."@de, 
+    skos:prefLabel "should"@en,
+		"sollen"@de,
+		"zou moeten"@nl ;
+    skos:altLabel "recommended"@en,
+		"empfohlen"@de,
+		"aanbevolen"@nl ;
+    rdfs:comment "Valid reasons may exist in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course."@en,
+		"Unter bestimmten Umständen kann es gute Gründe geben diese Spezifikation zu ignorieren. Die Auswirkungen müssen voll und ganz verstanden und sorgfältig abgewägt werden bevor von der Spezifikation abgewichen wird."@de,
 		"Geven een sterke wens aan, tenzij er een valide reden is om in een specifiek geval af te wijken. De implicaties daarvan moeten zorgvuldig gewogen zijn voordat er afgeweken wordt."@nl ;
 	.
 
 spec-bind:ShouldNot rdf:type spec:Bindingness ;
-    rdfs:label "Should not, Not recommended"@en, 
-		"Soll nicht, Nicht empfohlen"@de,
-		"Zou niet moeten"@nl ;
-    rdfs:comment "Valid reasons may exist in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed."@en, 
-		"In speziellen Situationen kann es gute Gründe geben kann, dass dieses Verhalten akzeptabel, ja sogar nützlich sein kann."@de, 
+    skos:prefLabel "should not"@en,
+		"soll nicht"@de,
+		"zou niet moeten"@nl ;
+    skos:altLabel "not recommended"@en,
+		"nicht empfohlen"@de ;
+    rdfs:comment "Valid reasons may exist in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed."@en,
+		"In speziellen Situationen kann es gute Gründe geben kann, dass dieses Verhalten akzeptabel, ja sogar nützlich sein kann."@de,
 		"Geven een ongewenste omstandigheid, waarvan volledige implicaties daarvan zorgvuldig gewogen moeten zijn voordat het in een specifiek geval toegestaan is."@nl ;
 	.
-		
-spec-bind:May rdf:type spec:Bindingness ;	
-    rdfs:label "May, Optional, Not required"@en, 
-		"Darf, Kann, Nicht nötig, Optional"@de,
-		"Kan, Mogen, Optioneel, Niet vereist"@nl ;
-    rdfs:comment "The item is truly optional."@en, 
-		"Das Verhalten ist wirklich optional."@de, 
+
+spec-bind:May rdf:type spec:Bindingness ;
+    skos:prefLabel "may"@en,
+        "darf"@de,
+        "kan"@nl ;
+    skos:altLabel "optional"@en,
+        "not required"@en,
+        "kann"@de,
+		"nicht nötig"@de,
+		"optional"@de,
+		"mogen"@nl,
+		"optioneel"@nl,
+		"niet vereist"@nl ;
+    rdfs:comment "The item is truly optional."@en,
+		"Das Verhalten ist wirklich optional."@de,
 		"Dit onderdeel is daadwerkelijk optioneel."@nl ;
 	.
